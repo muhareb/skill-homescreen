@@ -27,19 +27,22 @@ Mycroft.Delegate {
     bottomPadding: 0
     topPadding: 0
     property int gridUnit: Mycroft.Units.gridUnit
-
-    Image {
+    
+    AnimatedImage {
         id: homeScreenWallpaper
         anchors.fill: parent
         source: Qt.resolvedUrl(sessionData.wallpaperPath)
+        onStatusChanged: playing = (status == AnimatedImage.Ready)
     }
-
+   
+    
+    /*
     Item {
         x: gridUnit * 2
         y: gridUnit * 2
         height: gridUnit * 26
         width: gridUnit * 46
-
+        /*
         // Icon representing the current weather conditionsre, freshed every fifteen minutes.
         HomeScreenImage {
             id: homeScreenWeatherCondition
@@ -124,5 +127,5 @@ Mycroft.Delegate {
             text: sessionData.homeScreenDate
             width: parent.width
         }
-    }
+    }*/
 }
