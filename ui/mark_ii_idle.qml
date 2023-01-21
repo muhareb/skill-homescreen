@@ -22,17 +22,16 @@ import Mycroft 1.0 as Mycroft
 
 Mycroft.Delegate {
     id: homeScreenRoot
-    leftPadding: 0
-    rightPadding: 0
-    bottomPadding: 0
-    topPadding: 0
+    leftPadding: 100
+    rightPadding: 100
+    bottomPadding: 300
+    topPadding: 50
     property int gridUnit: Mycroft.Units.gridUnit
     
-    AnimatedImage {
+    Image {
         id: homeScreenWallpaper
         anchors.fill: parent
         source: Qt.resolvedUrl(sessionData.wallpaperPath)
-        onStatusChanged: playing = (status == AnimatedImage.Ready)
     }
    
     
